@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONObject;
-
 import com.member.db.MemberDAO;
 
 public class joinck implements Action{
@@ -23,17 +21,20 @@ public class joinck implements Action{
 		
 		check = mdao.idck(id);
 		
+//		PrintWriter out = response.getWriter();
+//		JSONObject obj = new JSONObject();
+		System.out.println(check+"aaaaa");
 		PrintWriter out = response.getWriter();
-		JSONObject obj = new JSONObject();
 		if(check == 1) {
-			obj.put("idck", check);
+			System.out.println("check!!!! 1111");//중복
 			out.println("1");
 		}else if(check == 2) {
-			obj.put("idck", check);
+			System.out.println("check!!!! 2222");//중복아님11
 			out.println("2");
+//			obj.put("idck", check);
+//			out.println("2");
 		}
-			out.close();
-				System.out.println(check);
+		System.out.println(check);
 		
 		return null;
 	}

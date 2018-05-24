@@ -74,22 +74,41 @@ var i = document.joinf;
 	$(document).ready(function(){
 		  $("#id").keyup(function (e) {
 		var id = $("#id").val();
-		$.ajax({
-			async:false,
-			type:'post',
-			url:"joinck.me",
-			data:{"id" : id},
-			dataType:"json",
-			success:function(data){
-				if(data == 1){
-					 $(".idck").val("비asd호일치").css({"color":"blue","font-weight":"bold","font-size":"15px"});
-				}else if(data == 2){
-					 $("#idck").val("비asd호일치").css({"color":"red","font-weight":"bold","font-size":"15px"});
-				}
-			}
-		});
+		
+		if(id.length>=2 && id.length<=10){
+			 $.ajax({
+					async:false,
+					type:"post",
+					url:"joinck.me",
+					data:{"id" : id},
+					dataType:"json",
+					success:function(data){
+						if(data == 1){
+							 $("#idck").val("아이디중복").css({"color":"red","font-weight":"bold","font-size":"15px"});
+						}else if(data == 2){
+							 $("#idck").val("아이디 사용 가능").css({"color":"blue","font-weight":"bold","font-size":"15px"});
+						}
+					}
+				});
+		}else{
+			 $("#idck").val("글자수 2~10로 해주세요").css({"color":"red","font-weight":"bold","font-size":"15px"});
+		}
+		  
 		  });
 	 });
+	
+	$(document).ready(function(){
+		$("#pass").keyup(function(e){
+			var pass = $("#pass").val();
+			var repass = $("#repass").val();
+				if(pass.length>=6 && pass.length<=12){
+					$("#passck").val("비밀번호 6~12로 해주세요").css({"color":"blue","font-weight":"bold","font-size":"15px"});
+				}else{
+					$("#passck").val("비밀번호 6~12로 해주세요").css({"color":"red","font-weight":"bold","font-size":"15px"});
+				}
+				
+		});
+	});
 
 </script>
 <body>

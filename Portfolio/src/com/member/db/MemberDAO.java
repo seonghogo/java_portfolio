@@ -209,13 +209,18 @@ public class MemberDAO {
 		
 		 try {
 			con = getConnection();
-			sql = "select pass from member where id=?";
+			sql = "select id from member where id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			System.out.println(id+"ududududud");
 			if(rs.next()) {
-				check = 1;
+				if(rs.getString("id").equals(id)) {
+					System.out.println("check1111111111111111111");
+					check = 1;
+				}else {
+					check=2;
+				}
 			}else {
 				check = 2;
 				System.out.println("11222");

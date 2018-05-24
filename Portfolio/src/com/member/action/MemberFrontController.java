@@ -106,6 +106,13 @@ public class MemberFrontController extends HttpServlet{
 			case "M_DeletePro.me":
 				forward = mappingURI(new M_DeletePro(), request, response);
 				break;
+				
+			case "joinck.me":
+				forward = mappingURI(new joinck(), request, response);
+				
+				break;
+				
+				
 			}
 			
 				

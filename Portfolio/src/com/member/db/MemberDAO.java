@@ -252,4 +252,53 @@ public class MemberDAO {
 		System.out.println(check+"checkckckck");
 		return check;
 	}
+	
+	public int emailck(String email) {
+		int check = 0;
+		
+		 try {
+			con = getConnection();
+			sql = "select email from member where email=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, email);
+			rs = pstmt.executeQuery();
+			System.out.println(email+"ududududud");
+			if(rs.next()) {
+				if(rs.getString("email").equals(email)) {
+					System.out.println("check1111111111111111111");
+					check = 1;
+				}else {
+					check=2;
+				}
+			}else {
+				check = 2;
+				System.out.println("11222");
+			}
+//			if(rs.next()) {
+//				System.out.println(id);
+//				System.out.println(rs.getString("id"));
+//				if(rs.getString("id").equals(id)) {
+//					System.out.println("11");
+//					check = 1;
+//				}else {
+//					System.out.println(rs.getString("id")+id+"2222");
+//					check = 2;
+//				}
+//			}else {
+//				System.out.println(rs.getString("id")+id+"2332");
+//				check =2;
+//			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			if(rs!=null)try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null)try{pstmt.close();}catch(SQLException se){}
+			if(con!=null)try{con.close();}catch(SQLException se){}
+		}
+		
+		System.out.println(check+"checkckckck");
+		return check;
+	}
 }

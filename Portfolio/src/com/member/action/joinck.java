@@ -16,26 +16,38 @@ public class joinck implements Action{
 		forward.setRedirect(false);
 		
 		String id = request.getParameter("id");
+		String email = request.getParameter("email");
 		MemberDAO mdao = new MemberDAO();
 		int check = 0;
 		
-		check = mdao.idck(id);
-		
-//		PrintWriter out = response.getWriter();
-//		JSONObject obj = new JSONObject();
-		System.out.println(check+"aaaaa");
-		PrintWriter out = response.getWriter();
-		if(check == 1) {
-			System.out.println("check!!!! 1111");//중복
-			out.println("1");
-		}else if(check == 2) {
-			System.out.println("check!!!! 2222");//중복아님11
-			out.println("2");
-//			obj.put("idck", check);
-//			out.println("2");
+		int ck = 0;
+		System.out.println(id+email+"!!!!!!!!!!!!!!!!!!!!!!");
+		if(id == null || email != null) {
+			ck  = 1;
+		}else if(email == null || id != null) {
+			ck = 2;
 		}
-		System.out.println(check);
-		
+		if(ck == 1) {
+			check = mdao.emailck(email);
+			PrintWriter out = response.getWriter();
+			if(check == 1) {
+				System.out.println("check!!!! 1111");//중복
+				out.println("1");
+			}else if(check == 2) {
+				System.out.println("check!!!! 2222");//중복아님11
+				out.println("2");
+			}
+		}else if(ck == 2 ) {
+			check = mdao.idck(id);
+			PrintWriter out = response.getWriter();
+			if(check == 1) {
+				System.out.println("check!!!! 1111");//중복
+				out.println("1");
+			}else if(check == 2) {
+				System.out.println("check!!!! 2222");//중복아님11
+				out.println("2");
+			}
+		}
 		return null;
 	}
 	

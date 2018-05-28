@@ -18,14 +18,18 @@
 				<input type="button" value="로그인" onclick="location.href='./LoginAction.me'" >	
 			<input type="button" value="회원가입" onclick="location.href='./JoinAction.me'">	
 			<%
+
 			}else if(id != null && admin == null){
+
 			%>
 				<input type="button" value="게시판" onclick="location.href='./B_listView.bo'">
 				<input type="button" value="수정" onclick="location.href='./M_updateView.me'">
 				<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
 				<input type="button" value="탈퇴" onclick="location.href='./M_deleteAction.me'">
 			<%	
+
 			}else if(id == null && admin != null){
+
 			 %>
 			 	
 				<input type="button" value="회원관리" onclick="location.href='#'">

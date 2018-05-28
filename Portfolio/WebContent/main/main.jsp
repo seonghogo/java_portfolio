@@ -29,9 +29,7 @@
 			<%	
 
 			}else if(id == null && admin != null){
-
 			 %>
-			 	
 				<input type="button" value="雀盔包府" onclick="location.href='#'">
 				<input type="button" value="器飘弃府坷包府" onclick="location.href='#'">
 				<input type="button" value="内靛 包府" onclick="location.href='#'">

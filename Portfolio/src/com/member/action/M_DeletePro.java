@@ -17,10 +17,10 @@ public class M_DeletePro implements Action{
 		// TODO Auto-generated method stub
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		
+		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		String pass =request.getParameter("pass");
-		
+		response.setContentType("text/html; charset=UTF-8");
 		MemberDAO mdao = new MemberDAO();
 		
 		
@@ -64,15 +64,11 @@ public class M_DeletePro implements Action{
 		}else if(check == 2){
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('비밀번호 다시 입력해주세요')");
+			out.println("alert('비밀번호가 다릅니다 다시 입력해주세요.')");
 			out.println("history.back();");
 			out.println("</script>");
 			out.close();
 		}
-		
-		
-		
-		
 		return forward;
 	}
 	

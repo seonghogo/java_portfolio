@@ -49,7 +49,7 @@ public class MemberDAO {
 					pstmt.setString(1, id);
 					pstmt.executeUpdate();
 					check = 1;
-				}else {
+				}else{
 					check = 2;
 				}
 			}else {

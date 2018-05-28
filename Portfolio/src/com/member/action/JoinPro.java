@@ -64,6 +64,8 @@ public class JoinPro implements Action{
 		
 		if(check == 1) {
 			forward.setPath("./Main.me");
+		}else if(check == 2) {
+			forward.setPath("./Main.me");
 		}
 		
 		

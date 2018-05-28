@@ -15,8 +15,9 @@ public class logoutPro implements Action{
 		HttpSession session = request.getSession();
 		
 		String id =(String)session.getAttribute("user");
+		String admin = (String)session.getAttribute("admin");
 		
-		if(id != null) {
+		if(id != null || admin != null ) {
 			session.invalidate();
 			forward.setPath("./Main.me");
 		}

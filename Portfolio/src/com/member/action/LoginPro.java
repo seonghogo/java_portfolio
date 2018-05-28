@@ -26,7 +26,7 @@ public class LoginPro implements Action{
 		MemberDAO mdao = new MemberDAO();
 		System.out.println(id+pass);
 		int check = 0;
-		
+		HttpSession session = request.getSession();
 		ArrayList<String[]> result = new ArrayList();
 		String SHA = "";
 		String password = "";
@@ -59,7 +59,7 @@ public class LoginPro implements Action{
 		check = mdao.login(id, SHA);
 		
 		if(check == 1) {
-			HttpSession session = request.getSession();
+			
 			session.setAttribute("user",id);
 			forward.setPath("./Main.me");
 		}else if(check == 2) {
@@ -76,6 +76,9 @@ public class LoginPro implements Action{
 			out.println("history.back();");
 			out.println("</script>");
 			out.close();
+		}else if(check == 5) {
+			session.setAttribute("admin",id);
+			forward.setPath("./Main.me");
 		}
 		
 		

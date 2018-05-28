@@ -137,7 +137,8 @@ $(document).ready(function(){
 				 			document.joinf.submit();
 				 		}
 					}
-		}		
+		}
+	}
 	
 </script>
 <body>

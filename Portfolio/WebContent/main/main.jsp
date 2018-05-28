@@ -20,6 +20,7 @@
 			<%
 			}else if(id != null && admin == null){
 			%>
+				<input type="button" value="°Ô½ÃÆÇ" onclick="location.href='./B_listView.bo'">
 				<input type="button" value="¼öÁ¤" onclick="location.href='./M_updateView.me'">
 				<input type="button" value="·Î±×¾Æ¿ô" onclick="location.href='./logout.me'">
 				<input type="button" value="Å»Åð" onclick="location.href='./M_deleteAction.me'">

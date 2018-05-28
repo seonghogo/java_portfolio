@@ -43,12 +43,15 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				if(rs.getString("pass").equals(pass)) {
-					
 					sql = "update member set logindate=now() where id=?";
 					pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, id);
 					pstmt.executeUpdate();
+					if(id.equals("admin")) {
+						check = 5;
+					}else {
 					check = 1;
+					}
 				}else{
 					check = 2;
 				}
@@ -78,7 +81,6 @@ public class MemberDAO {
 				num = rs.getInt("num");
 				num = num+1;
 			}
-			System.out.println(num);
 			sql = "insert into member(num,id,pass,email,name,joindate) values(?,?,?,?,?,now())";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
@@ -87,8 +89,12 @@ public class MemberDAO {
 			pstmt.setString(4,email);
 			pstmt.setString(5,name);
 			pstmt.executeUpdate();
-			check = 1;
-			System.out.println(check);
+			
+			if(id.equals("admin")) {
+				check = 2;
+			}else {
+				check = 1;
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}finally {

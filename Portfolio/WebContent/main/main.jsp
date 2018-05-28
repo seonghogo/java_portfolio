@@ -9,22 +9,32 @@
 <body>
 	<%
 		String id = (String)session.getAttribute("user");
+		String admin = (String)session.getAttribute("admin");
 	%>
 		<form>
 			<%
-			if(id==null){
+			if(id==null && admin == null){
 			%>
 				<input type="button" value="로그인" onclick="location.href='./LoginAction.me'" >	
 			<input type="button" value="회원가입" onclick="location.href='./JoinAction.me'">	
 			<%
-			}else{
+			}else if(id != null && admin == null){
 			%>
 				<input type="button" value="수정" onclick="location.href='./M_updateView.me'">
 				<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
 				<input type="button" value="탈퇴" onclick="location.href='./M_deleteAction.me'">
 			<%	
-			}
+			}else if(id == null && admin != null){
 			 %>
+			 	
+				<input type="button" value="회원관리" onclick="location.href='#'">
+				<input type="button" value="포트폴리오관리" onclick="location.href='#'">
+				<input type="button" value="코드 관리" onclick="location.href='#'">
+			 	<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
+			 
+			<%
+			}
+			%>				
 		</form>
 </body>
 </html>

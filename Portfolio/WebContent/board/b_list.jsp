@@ -31,7 +31,8 @@
 	
 		
 		<input type="hidden" value="<%=bb.getB_num() %>" name="b_num">
-		<input type="button" value="글쓰기" onclick="./B_insertAction.bo">
+		<input type="button" value="글쓰기" onclick="location.href='./B_insertAction.bo'">
+			<input type="button" value="메인" onclick="location.href='./Main.me'">	
 		</form>
 		
 	

@@ -10,16 +10,17 @@
 <body>
 	<%
 		BoardBean bb = (BoardBean)request.getAttribute("b_update");
+		int b_num = Integer.parseInt(request.getParameter("b_num"));
 	%>
 		
 		<form action="./B_updatePro.bo" method="post">
 		
-		<input type="text" value="<%=bb.getB_title()%>">			
-		<input type="text" value="<%=bb.getB_contents()%>">
-		
+		<input type="text" value="<%=bb.getB_title()%>" name="title"><br>		
+		<textarea name="contents" cols="50" rows="13"><%=bb.getB_contents() %></textarea>
 		<input type="submit" value="수정" >
 		<input type="button" value="삭제" >
-		
+	<input type="button" value="목록" onclick="location.href='./B_listView.bo'">
+		<input type="hidden" value="<%=b_num%>" name="b_num">
 		
 		</form>
 					

@@ -52,7 +52,10 @@ public class BoardFrontController extends HttpServlet{
 				break;*/
 				
 			
-				
+			case "Main.me":
+				forward.setRedirect(false);
+				forward.setPath("./main/main.jsp");
+				break;
 				
 				//member
 			case "B_listView.bo":
@@ -92,6 +95,14 @@ public class BoardFrontController extends HttpServlet{
 			case "B_updateAction.bo":
 				forward.setRedirect(false);
 				forward.setPath("./board/b_update.jsp");
+				break;
+			
+			case "B_updatePro.bo":
+				forward = mappingURI(new B_updatePro(),request, response);
+				break;
+				
+			case "B_deletePro.bo":
+				forward = mappingURI(new B_deletePro(),request, response);
 				break;
 				
 			}

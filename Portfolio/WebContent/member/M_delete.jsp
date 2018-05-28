@@ -7,6 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript">
+	function del() {
+		var i = document.delf;
+		
+		if(i.pass.value == ""){
+			alert('비밀번호 입력해주세요');
+		}else{
+			i.submit();
+		}
+	}
+
+</script>
 <body>
 	<%
 		String id =(String)session.getAttribute("user");
@@ -21,10 +33,11 @@
 		}
 	%>
 	
-	<form action="./M_DeletePro.me" method="post">
-			<input type="text" value="<%=id %>" name="id">
-			<input type="password" value="" name = "pass">
-			<input type="submit" value="탈퇴">
+	<form action="./M_DeletePro.me" method="post" name="delf">
+			<input type="text" value="<%=id %>" name="id" style="border: none"
+			readonly="readonly"><br>
+			<input type="password" value="" name = "pass"><br>
+			<input type="button" value="탈퇴" onclick="del()">
 			<input type="button" value="메인" onclick="location.href='./Main.me'">	
 	</form>
 	

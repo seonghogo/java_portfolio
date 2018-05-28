@@ -96,6 +96,8 @@ $(document).ready(function(){
 
 	function joinck() {
 		var i = document.joinf;
+		var email = i.email.value;
+		var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 		if(i.id.value == ""){
 			alert('아이디를 입력해주세요');
 			return;
@@ -111,40 +113,31 @@ $(document).ready(function(){
 		}else if(i.name.value == ""){
 			alert('이름을 입력해주세요');
 			return;
-		}else if(i.email.value == ""){
+		}else if(i.email.value == "" ){
 			alert('이메일을 입력해주세요');
 			return;
-		}
-		else if(i.email.value != ""){
-			var email = i.email.value;
-			var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-					if(exptext.test(email)==false){
-
-				//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
-				alert("이 메일형식이 올바르지 않습니다.");
-				return;
-				}
-		}
-		else{
-			alert('asd');
-// 			document.joinf.submit();
-		}
-// 		else if(ckid == 1){
-// 			alert("중복된 아이디입니다 다시 확인해주세요.");
-// 			return;
-// 		}else if(ckemail == 1){
-// 			alert("중복된 이메일입니다 다시 확인해주세요.");
-// 			return;
-// 		}else if(ckrepass == 1){
-// 			alert("비밀번호 6~12로 해주세요 ");	
-// 			return;
-// 		}else if(ckpass == 1){
-// 			alert("비밀번호가 다릅니다.");
-// 			return;
-// 		}
-
-
-	}
+		}else if(i.email.value != ""){
+					if(!exptext.test(email)){
+						alert("이 메일형식이 올바르지 않습니다.");
+						return;
+					}else{
+						if(ckid == 1){
+				 			alert("중복된 아이디입니다 다시 확인해주세요.");
+				 			return;
+				 		}else if(ckemail == 1){
+				 			alert("중복된 이메일입니다 다시 확인해주세요.");
+				 			return;
+				 		}else if(ckrepass == 1){
+				 			alert("비밀번호 6~12로 해주세요 ");	
+				 			return;
+				 		}else if(ckpass == 1){
+				 			alert("비밀번호가 다릅니다.");
+				 			return;
+				 		}else{
+				 			document.joinf.submit();
+				 		}
+					}
+		}		
 	
 </script>
 <body>

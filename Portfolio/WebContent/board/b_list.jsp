@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%
+		String admin = (String)session.getAttribute("admin");
 		ArrayList list = (ArrayList)request.getAttribute("b_list");
 		BoardBean bb = null;
 	%>
@@ -31,7 +32,12 @@
 	
 		
 		<input type="hidden" value="<%=bb.getB_num() %>" name="b_num">
+		<%
+			if(admin != null){
+		%>
 		<input type="button" value="글쓰기" onclick="location.href='./B_insertAction.bo'">
+		<%} %>		
+			
 			<input type="button" value="메인" onclick="location.href='./Main.me'">	
 		</form>
 		

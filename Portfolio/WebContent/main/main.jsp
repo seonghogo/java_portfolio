@@ -31,8 +31,8 @@
 			}else if(id == null && admin != null){
 			 %>
 				<input type="button" value="회원관리" onclick="location.href='#'">
-				<input type="button" value="포트폴리오관리" onclick="location.href='#'">
-				<input type="button" value="코드 관리" onclick="location.href='#'">
+				<input type="button" value="포트폴리오관리" onclick="location.href='P_listView.ad'">
+				<input type="button" value="코드 관리" onclick="location.href='./B_listView.bo'">
 			 	<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
 			 
 			<%

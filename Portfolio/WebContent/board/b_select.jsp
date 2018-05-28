@@ -31,6 +31,8 @@
 	<%
 		BoardBean bb = (BoardBean)request.getAttribute("b_sel");
 		String id = (String)session.getAttribute("user");
+		String admin = (String)session.getAttribute("admin");
+		
 		String b_id = "";
 		int ck = 0;
 	%>
@@ -44,13 +46,11 @@
 		<input type="text" style="border: none"	readonly="readonly" value="<%=bb.getB_count()%>"><br>
 		
 <!-- 		<input type="text" id="passck" value="" style="border: none" readonly="readonly">	<br>	 -->
+	
 		<%
-			if(id.equals(bb.getB_id())){
-		%>		
+			if(admin != null){
+		%>	
 		<input type="password" id="pass" name="pass" value="">	<br>
-		<input type="button" value="목록" onclick="location.href='./B_listView.bo'">
-<%-- 		<input type="button" value="수정" onclick="location.href='./B_updateView.bo?b_num=<%=bb.getB_num()%>'"> 	 --%>
-<%-- 		<input type="button" value="삭제" onclick="location.href='./B_listView.bo?b_num=<%=bb.getB_num()%>'"> 	 --%>
 		<input type="button" value="수정" onclick="ck()">
 		<input type="button" value="삭제" onclick="passckdel(<%=bb.getB_num()%>)">
 		<%

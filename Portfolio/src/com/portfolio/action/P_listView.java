@@ -11,6 +11,8 @@ public class P_listView implements Action{
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		
+		forward.setPath("./P_listAction.pf");
+		
 		
 		return null;
 	}

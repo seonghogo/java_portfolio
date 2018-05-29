@@ -23,18 +23,26 @@
 
 
 			%>
-				<input type="button" value="寃�����" onclick="location.href='./B_listView.bo'">
-				<input type="button" value="����" onclick="location.href='./M_updateView.me'">
-				<input type="button" value="濡�洹몄����" onclick="location.href='./logout.me'">
-				<input type="button" value="����" onclick="location.href='./M_deleteAction.me'">
+
+				<input type="button" value="��Ʈ���" onclick="location.href='./P_listView.ad'">
+				<input type="button" value="�ڵ� �Խ���" onclick="location.href='./B_listView.bo'">
+				<input type="button" value="���" onclick="location.href='./M_updateView.me'">
+				<input type="button" value="�α׾ƿ�" onclick="location.href='./logout.me'">
+				<input type="button" value="Ż��" onclick="location.href='./M_deleteAction.me'">
+				
+
 			<%	
 
 			}else if(id == null && admin != null){
 			 %>
-				<input type="button" value="회원관리" onclick="location.href='#'">
-				<input type="button" value="포트폴리오관리" onclick="location.href='P_listView.ad'">
-				<input type="button" value="코드 관리" onclick="location.href='./B_listView.bo'">
-			 	<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
+
+			 
+				<input type="button" value="�ڱ�Ұ� ��� �� ���" onclick="location.href='./AboutView.us'">
+				<input type="button" value="ȸ���" onclick="location.href='./UserList.us'">
+				<input type="button" value="��Ʈ����" onclick="location.href='./P_listView.ad'">
+				<input type="button" value="�ڵ� ��" onclick="location.href='./B_listView.bo'">
+			 	<input type="button" value="�α׾ƿ�" onclick="location.href='./logout.me'">
+
 			 
 			<%
 			}

@@ -1,10 +1,10 @@
 <%@page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,19 +14,19 @@
 			if(id == null){
 				PrintWriter ot = response.getWriter();
 				ot.println("<script>");
-				ot.println("alert('°ü¸®ÀÚ¸¸ ÀÛ¼º°¡´É')");
+				ot.println("alert('ê´€ë¦¬ìë§Œ ì‘ì„±ê°€ëŠ¥')");
 				ot.println("history.back();");
 				ot.println("</script>");
 				ot.close();
 			}
 	%>
 	<form action="./B_insertPro.bo" method="post"><br>
-		Á¦¸ñ<input type="text" value="" name="title"><br>
+		ì œëª©<input type="text" value="" name="title"><br>
 		<textarea name="contents" cols="50" rows="13"></textarea>
 		
-		<input type="submit" value="±Û¾²±â">
-		<input type="reset" value="´Ù½Ã¾²±â" >	
-		<input type="button" value="Ãë¼Ò" onclick="location.href='./B_listView.bo'">	
+		<input type="submit" value="ê¸€ì“°ê¸°">
+		<input type="reset" value="ë‹¤ì‹œì“°ê¸°" >	
+		<input type="button" value="ì·¨ì†Œ" onclick="location.href='./B_listView.bo'">	
 	
 	
 	</form>

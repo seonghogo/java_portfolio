@@ -1,10 +1,10 @@
 <%@page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
@@ -12,7 +12,7 @@
 		var i = document.delf;
 		
 		if(i.pass.value == ""){
-			alert('ºñ¹Ğ¹øÈ£ ÀÔ·ÂÇØÁÖ¼¼¿ä');
+			alert('ë¹„ë°€ë²ˆí˜¸ ì…ë ¥í•´ì£¼ì„¸ìš”');
 		}else{
 			i.submit();
 		}
@@ -26,7 +26,7 @@
 		if(id == null){
 			PrintWriter ot = response.getWriter();
 			ot.println("<script>");
-			ot.println("alert('·Î±×ÀÎÇØÁÖ¼¼¿ä')");
+			ot.println("alert('ë¡œê·¸ì¸í•´ì£¼ì„¸ìš”')");
 			ot.println("history.back();");
 			ot.println("</script>");
 			ot.close();
@@ -37,8 +37,8 @@
 			<input type="text" value="<%=id %>" name="id" style="border: none"
 			readonly="readonly"><br>
 			<input type="password" value="" name = "pass"><br>
-			<input type="button" value="Å»Åğ" onclick="del()">
-			<input type="button" value="¸ŞÀÎ" onclick="location.href='./Main.me'">	
+			<input type="button" value="íƒˆí‡´" onclick="del()">
+			<input type="button" value="ë©”ì¸" onclick="location.href='./Main.me'">	
 	</form>
 	
 	

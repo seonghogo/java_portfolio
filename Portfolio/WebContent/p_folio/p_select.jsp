@@ -1,24 +1,24 @@
 <%@page import="com.portfolio.db.P_folioBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
 	
 	function ck() {
 		if(document.slef.pass.value==""){
-			alert("ºñ¹Ğ¹øÈ£ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			alert("ë¹„ë°€ë²ˆí˜¸ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		}else{
 			document.slef.submit();
 		}
 	}
 	function passckdel(pb) {
 		if(document.slef.pass.value==""){
-			alert("ºñ¹Ğ¹øÈ£ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			alert("ë¹„ë°€ë²ˆí˜¸ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		}else{
 			document.slef.action= "./P_deletePro.ad?p_num="+pb; 
 			document.slef.submit(); 
@@ -50,12 +50,12 @@
 			if(admin != null){
 		%>	
 		<input type="password" id="pass" name="pass" value="">	<br>
-		<input type="button" value="¼öÁ¤" onclick="ck()">
-		<input type="button" value="»èÁ¦" onclick="passckdel(<%=pb.getP_num()%>)">
+		<input type="button" value="ìˆ˜ì •" onclick="ck()">
+		<input type="button" value="ì‚­ì œ" onclick="passckdel(<%=pb.getP_num()%>)">
 		<%
 		}else{
 		%>
-		<input type="button" value="¸ñ·Ï" onclick="location.href='./P_listView.ad'">	
+		<input type="button" value="ëª©ë¡" onclick="location.href='./P_listView.ad'">	
 		<%} %>
 	</form>
 </body>

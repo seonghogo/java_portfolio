@@ -1,11 +1,11 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.board.db.BoardBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script src="//code.jquery.com/jquery.js"></script>
@@ -20,7 +20,7 @@
 			if(id == null){
 				PrintWriter ot = response.getWriter();
 				ot.println("<script>");
-				ot.println("alert('°ü¸®ÀÚ¸¸ ÀÛ¼º°¡´É')");
+				ot.println("alert('ê´€ë¦¬ìë§Œ ì‘ì„±ê°€ëŠ¥')");
 				ot.println("history.back();");
 				ot.println("</script>");
 				ot.close();
@@ -30,9 +30,9 @@
 		
 		<input type="text" value="<%=bb.getB_title()%>" name="title"><br>		
 		<textarea name="contents" cols="50" rows="13"><%=bb.getB_contents() %></textarea>
-		<input type="submit" value="¼öÁ¤" >
-		<input type="button" value="»èÁ¦" >
-	<input type="button" value="¸ñ·Ï" onclick="location.href='./B_listView.bo'">
+		<input type="submit" value="ìˆ˜ì •" >
+		<input type="button" value="ì‚­ì œ" >
+	<input type="button" value="ëª©ë¡" onclick="location.href='./B_listView.bo'">
 		<input type="hidden" value="<%=b_num%>" name="b_num">
 		
 		</form>

@@ -1,11 +1,11 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.member.db.MemberBean"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script src="//code.jquery.com/jquery.js"></script>
@@ -24,10 +24,10 @@ $(document).ready(function(){
 				dataType:"json",
 				success:function(data){
 					if(data == 1){
-						 $("#emailck").val("ÀÌ¸ŞÀÏÁßº¹").css({"color":"red","font-weight":"bold","font-size":"15px"});
+						 $("#emailck").val("ì´ë©”ì¼ì¤‘ë³µ").css({"color":"red","font-weight":"bold","font-size":"15px"});
 						 ckemail = 1;
 					}else if(data == 2){
-						 $("#emailck").val("ÀÌ¸ŞÀÏ »ç¿ë °¡´É").css({"color":"blue","font-weight":"bold","font-size":"15px"});
+						 $("#emailck").val("ì´ë©”ì¼ ì‚¬ìš© ê°€ëŠ¥").css({"color":"blue","font-weight":"bold","font-size":"15px"});
 						 ckemail = 0;
 					}
 				}
@@ -40,15 +40,15 @@ function update(ck) {
 	var email = i.email.value;
 	var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 	if(i.pass.value == ""){
-		alert('ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä');
+		alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”');
 		return;
 	}else if(i.email.value != ""){
 		if(ck != i.email.value){
 			if(!exptext.test(email)){
-				alert("ÀÌ ¸ŞÀÏÇü½ÄÀÌ ¿Ã¹Ù¸£Áö ¾Ê½À´Ï´Ù.");
+				alert("ì´ ë©”ì¼í˜•ì‹ì´ ì˜¬ë°”ë¥´ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				return;
 			}else if(ckemail == 1){
-				alert('Áßº¹µÈ ÀÌ¸ŞÀÏÀÔ´Ï´Ù.');
+				alert('ì¤‘ë³µëœ ì´ë©”ì¼ì…ë‹ˆë‹¤.');
 				return;
 			}else{
 				i.submit();
@@ -70,7 +70,7 @@ function update(ck) {
 		if(id == null){
 			PrintWriter ot = response.getWriter();
 			ot.println("<script>");
-			ot.println("alert('·Î±×ÀÎÇØÁÖ¼¼¿ä')");
+			ot.println("alert('ë¡œê·¸ì¸í•´ì£¼ì„¸ìš”')");
 			ot.println("history.back();");
 			ot.println("</script>");
 			ot.close();
@@ -91,8 +91,8 @@ function update(ck) {
 			Pass<input type="password" value="" name="pass">
 			
 			
-			<input type="button" value="¼öÁ¤" onclick="update('<%=mb.getEmail()%>')">
-			<input type="button" value="¸ŞÀÎ" onclick="location.href='./Main.me'">
+			<input type="button" value="ìˆ˜ì •" onclick="update('<%=mb.getEmail()%>')">
+			<input type="button" value="ë©”ì¸" onclick="location.href='./Main.me'">
 		
 		</form>
 	

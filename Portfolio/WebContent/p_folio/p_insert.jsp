@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script src="//code.jquery.com/jquery.js"></script>
@@ -11,10 +11,10 @@
 	var i = document.insertf;
 	function ck() {
 		if(document.insertf.title.value == ""){
-			alert("Á¦¸ñ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			alert("ì œëª© ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 			return;
 		}else if(document.insertf.contents.value == ""){
-			alert("³»¿ë ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			alert("ë‚´ìš© ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 			return;
 		}else{
 			document.insertf.submit();
@@ -27,14 +27,14 @@
 		<select class="item" name="item">
      <option value="1" selected="selected">Java</option>
      <option value="2">Ruby</option>
-     <option value="3">±×¿Ü</option>
+     <option value="3">ê·¸ì™¸</option>
     </select>
 		<input type="text" value="" name="title">
 		<input type="text" value="" name="contents">
 		<input type="file" name="file">
-		<input type="button" value="Ãß°¡" onclick="ck()">
-		<input type="reset" value="´Ù½Ã¾²±â" >	
-		<input type="button" value="Ãë¼Ò" onclick="location.href='./B_listView.bo'">	
+		<input type="button" value="ì¶”ê°€" onclick="ck()">
+		<input type="reset" value="ë‹¤ì‹œì“°ê¸°" >	
+		<input type="button" value="ì·¨ì†Œ" onclick="location.href='./B_listView.bo'">	
 	</form>
 </body>
 </html>

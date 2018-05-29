@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 	<script type="text/javascript">
@@ -11,10 +11,10 @@
 			var i = document.loginf;
 			
 			if(i.id.value==""){
-				alert("¾ÆÀÌµğ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				alert("ì•„ì´ë”” ì…ë ¥í•´ì£¼ì„¸ìš”");
 				return;
 			}else if(i.pass.value == ""){
-				alert("ºñ¹Ğ¹øÈ£ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				alert("ë¹„ë°€ë²ˆí˜¸ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				return;
 			}else{
 				i.submit();
@@ -29,9 +29,9 @@
 		<form action="./LoginPro.me" method="post" name="loginf">
 			<input type="text" value="" name="id">
 			<input type="password" value="" name = "pass">
-			<input type="button" value="·Î±×ÀÎ" onclick="loginck()">
-			<input type="button" value="È¸¿ø°¡ÀÔ" onclick="location.href='./JoinAction.me'">	
-			<input type="button" value="¸ŞÀÎ" onclick="location.href='./Main.me'">	
+			<input type="button" value="ë¡œê·¸ì¸" onclick="loginck()">
+			<input type="button" value="íšŒì›ê°€ì…" onclick="location.href='./JoinAction.me'">	
+			<input type="button" value="ë©”ì¸" onclick="location.href='./Main.me'">	
 		</form>
 </body>
 </html>

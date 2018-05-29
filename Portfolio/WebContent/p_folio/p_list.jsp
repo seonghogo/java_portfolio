@@ -1,12 +1,12 @@
 <%@page import="com.portfolio.db.P_folioBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.io.PrintWriter"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -33,9 +33,9 @@
 		<%
 		if(admin != null){
 		%>
-		<input type="button" value="Æ÷Æ®Æú¸®¿À Ãß°¡" onclick="location.href='p_insert.ad'">
+		<input type="button" value="í¬íŠ¸í´ë¦¬ì˜¤ ì¶”ê°€" onclick="location.href='p_insert.ad'">
 		<%} %>		
-		<input type="button" value="¸ŞÀÎ" onclick="location.href='Main.me'">
+		<input type="button" value="ë©”ì¸" onclick="location.href='Main.me'">
 		</form>
 </body>
 </html>

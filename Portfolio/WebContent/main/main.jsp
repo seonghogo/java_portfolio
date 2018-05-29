@@ -15,25 +15,26 @@
 			<%
 			if(id==null && admin == null){
 			%>
-				<input type="button" value="·Î±×ÀÎ" onclick="location.href='./LoginAction.me'" >	
-			<input type="button" value="È¸¿ø°¡ÀÔ" onclick="location.href='./JoinAction.me'">	
+				<input type="button" value="æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½" onclick="location.href='./LoginAction.me'" >	
+			<input type="button" value="ï¿½ï¿½ï¿½ï¿½åª›ï¿½ï¿½ï¿½" onclick="location.href='./JoinAction.me'">	
 			<%
 
 			}else if(id != null && admin == null){
 
+
 			%>
-				<input type="button" value="°Ô½ÃÆÇ" onclick="location.href='./B_listView.bo'">
-				<input type="button" value="¼öÁ¤" onclick="location.href='./M_updateView.me'">
-				<input type="button" value="·Î±×¾Æ¿ô" onclick="location.href='./logout.me'">
-				<input type="button" value="Å»Åð" onclick="location.href='./M_deleteAction.me'">
+				<input type="button" value="å¯ƒï¿½ï¿½ï¿½ï¿½ï¿½" onclick="location.href='./B_listView.bo'">
+				<input type="button" value="ï¿½ï¿½ï¿½ï¿½" onclick="location.href='./M_updateView.me'">
+				<input type="button" value="æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½ï¿½ï¿½" onclick="location.href='./logout.me'">
+				<input type="button" value="ï¿½ï¿½ï¿½ï¿½" onclick="location.href='./M_deleteAction.me'">
 			<%	
 
 			}else if(id == null && admin != null){
 			 %>
-				<input type="button" value="È¸¿ø°ü¸®" onclick="location.href='#'">
-				<input type="button" value="Æ÷Æ®Æú¸®¿À°ü¸®" onclick="location.href='P_listView.ad'">
-				<input type="button" value="ÄÚµå °ü¸®" onclick="location.href='./B_listView.bo'">
-			 	<input type="button" value="·Î±×¾Æ¿ô" onclick="location.href='./logout.me'">
+				<input type="button" value="íšŒì›ê´€ë¦¬" onclick="location.href='#'">
+				<input type="button" value="í¬íŠ¸í´ë¦¬ì˜¤ê´€ë¦¬" onclick="location.href='P_listView.ad'">
+				<input type="button" value="ì½”ë“œ ê´€ë¦¬" onclick="location.href='./B_listView.bo'">
+			 	<input type="button" value="ë¡œê·¸ì•„ì›ƒ" onclick="location.href='./logout.me'">
 			 
 			<%
 			}

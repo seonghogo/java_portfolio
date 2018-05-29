@@ -1,14 +1,13 @@
 package com.portfolio.action;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.board.db.BoardDAO;
 import com.portfolio.db.P_folioBean;
 import com.portfolio.db.P_folioDAO;
 
-public class P_listView implements Action{
+public class P_updatePro implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -16,18 +15,15 @@ public class P_listView implements Action{
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		
+		String title = request.getParameter("title");
+		String contents = request.getParameter("contents");
+		int p_num = Integer.parseInt(request.getParameter("p_num"));
 		
-		
-		ArrayList<P_folioBean> list = new ArrayList<>();
 		P_folioDAO pdao = new P_folioDAO();
-		
-		list = pdao.list();
-		
-		request.setAttribute("plist", list);
-		forward.setPath("./P_listAction.ad");
+		pdao.p_update(title,contents,p_num);
 		
 		
-		
+		forward.setPath("./P_listView.ad");
 		return forward;
 	}
 	

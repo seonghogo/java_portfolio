@@ -1,3 +1,4 @@
+<%@page import="com.portfolio.db.P_folioBean"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="com.board.db.BoardBean"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -11,8 +12,8 @@
 <script src="//code.jquery.com/jquery.js"></script>
 <body>
 	<%
-		BoardBean bb = (BoardBean)request.getAttribute("b_update");
-		int b_num = Integer.parseInt(request.getParameter("b_num"));
+		P_folioBean pb = (P_folioBean)request.getAttribute("p_update");
+		int num = Integer.parseInt(request.getParameter("p_num"));
 	%>
 			<%
 		String id = (String)session.getAttribute("admin");
@@ -26,14 +27,14 @@
 				ot.close();
 			}
 	%>
-		<form action="./B_updatePro.bo" method="post">
+		<form action="./P_updatePro.ad" method="post">
 		
-		<input type="text" value="<%=bb.getB_title()%>" name="title"><br>		
-		<textarea name="contents" cols="50" rows="13"><%=bb.getB_contents() %></textarea>
+		<input type="text" value="<%=pb.getP_title()%>" name="title"><br>		
+		<textarea name="contents" cols="50" rows="13"><%=pb.getP_contents() %></textarea>
 		<input type="submit" value="수정" >
-		<input type="button" value="삭제" >
-	<input type="button" value="목록" onclick="location.href='./B_listView.bo'">
-		<input type="hidden" value="<%=b_num%>" name="b_num">
+<!-- 		<input type="button" value="삭제"> -->
+	<input type="button" value="목록" onclick="location.href='./P_listView.ad'">
+		<input type="hidden" value="<%=num%>" name="p_num">
 		
 		</form>
 					

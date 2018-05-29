@@ -15,29 +15,34 @@
 			<%
 			if(id==null && admin == null){
 			%>
-				<input type="button" value="·Î±×ÀÎ" onclick="location.href='./LoginAction.me'" >	
-			<input type="button" value="È¸¿ø°¡ÀÔ" onclick="location.href='./JoinAction.me'">	
+				<input type="button" value="æ¿¡ï¿½æ´¹ëª„ï¿½ï¿½" onclick="location.href='./LoginAction.me'" >	
+			<input type="button" value="ï¿½ï¿½ï¿½ï¿½åª›ï¿½ï¿½ï¿½" onclick="location.href='./JoinAction.me'">	
 			<%
 
 			}else if(id != null && admin == null){
 
+
 			%>
-				<input type="button" value="Æ÷Æ®Æú¸®¿À" onclick="location.href='./P_listView.ad'">
-				<input type="button" value="ÄÚµå °Ô½ÃÆÇ" onclick="location.href='./B_listView.bo'">
-				<input type="button" value="¼öÁ¤" onclick="location.href='./M_updateView.me'">
-				<input type="button" value="·Î±×¾Æ¿ô" onclick="location.href='./logout.me'">
-				<input type="button" value="Å»Åð" onclick="location.href='./M_deleteAction.me'">
+
+				<input type="button" value="ï¿½ï¿½Æ®ï¿½ï¿½ï¿½" onclick="location.href='./P_listView.ad'">
+				<input type="button" value="ï¿½Úµï¿½ ï¿½Ô½ï¿½ï¿½ï¿½" onclick="location.href='./B_listView.bo'">
+				<input type="button" value="ï¿½ï¿½ï¿½" onclick="location.href='./M_updateView.me'">
+				<input type="button" value="ï¿½Î±×¾Æ¿ï¿½" onclick="location.href='./logout.me'">
+				<input type="button" value="Å»ï¿½ï¿½" onclick="location.href='./M_deleteAction.me'">
 				
+
 			<%	
 
 			}else if(id == null && admin != null){
 			 %>
+
 			 
-				<input type="button" value="ÀÚ±â¼Ò°³ µî·Ï ¹× ¼öÁ¤" onclick="location.href='./AboutView.us'">
-				<input type="button" value="È¸¿ø°ü¸®" onclick="location.href='./UserList.us'">
-				<input type="button" value="Æ÷Æ®Æú¸®¿À°ü¸®" onclick="location.href='./P_listView.ad'">
-				<input type="button" value="ÄÚµå °ü¸®" onclick="location.href='./B_listView.bo'">
-			 	<input type="button" value="·Î±×¾Æ¿ô" onclick="location.href='./logout.me'">
+				<input type="button" value="ï¿½Ú±ï¿½Ò°ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½" onclick="location.href='./AboutView.us'">
+				<input type="button" value="È¸ï¿½ï¿½ï¿½" onclick="location.href='./UserList.us'">
+				<input type="button" value="ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½" onclick="location.href='./P_listView.ad'">
+				<input type="button" value="ï¿½Úµï¿½ ï¿½ï¿½" onclick="location.href='./B_listView.bo'">
+			 	<input type="button" value="ï¿½Î±×¾Æ¿ï¿½" onclick="location.href='./logout.me'">
+
 			 
 			<%
 			}

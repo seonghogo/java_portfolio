@@ -15,26 +15,25 @@
 			<%
 			if(id==null && admin == null){
 			%>
-				<input type="button" value="로그인" onclick="location.href='./LoginAction.me'" >	
-			<input type="button" value="회원가입" onclick="location.href='./JoinAction.me'">	
+				<input type="button" value="濡�洹몄��" onclick="location.href='./LoginAction.me'" >	
+			<input type="button" value="����媛���" onclick="location.href='./JoinAction.me'">	
 			<%
 
 			}else if(id != null && admin == null){
 
+
 			%>
-				<input type="button" value="게시판" onclick="location.href='./B_listView.bo'">
-				<input type="button" value="수정" onclick="location.href='./M_updateView.me'">
-				<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
-				<input type="button" value="탈퇴" onclick="location.href='./M_deleteAction.me'">
+				<input type="button" value="寃�����" onclick="location.href='./B_listView.bo'">
+				<input type="button" value="����" onclick="location.href='./M_updateView.me'">
+				<input type="button" value="濡�洹몄����" onclick="location.href='./logout.me'">
+				<input type="button" value="����" onclick="location.href='./M_deleteAction.me'">
 			<%	
 
 			}else if(id == null && admin != null){
-
 			 %>
-			 	
 				<input type="button" value="회원관리" onclick="location.href='#'">
-				<input type="button" value="포트폴리오관리" onclick="location.href='#'">
-				<input type="button" value="코드 관리" onclick="location.href='#'">
+				<input type="button" value="포트폴리오관리" onclick="location.href='P_listView.ad'">
+				<input type="button" value="코드 관리" onclick="location.href='./B_listView.bo'">
 			 	<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
 			 
 			<%

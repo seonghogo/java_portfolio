@@ -37,7 +37,7 @@
  
   <servlet-mapping>
   	<servlet-name>PortfolioFrontController</servlet-name>
-  	<url-pattern>*.pf</url-pattern>
+  	<url-pattern>*.ad</url-pattern>
   </servlet-mapping>
   
   

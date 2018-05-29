@@ -9,9 +9,9 @@
 </head>
 <body>
 	<%
-		String id = (String)session.getAttribute("admin");
+		String admin = (String)session.getAttribute("admin");
 	
-			if(id == null){
+			if(admin == null){
 				PrintWriter ot = response.getWriter();
 				ot.println("<script>");
 				ot.println("alert('관리자만 작성가능')");
@@ -20,15 +20,6 @@
 				ot.close();
 			}
 	%>
-	<form action="./B_insertPro.bo" method="post"><br>
-		제목<input type="text" value="" name="title"><br>
-		<textarea name="contents" cols="50" rows="13"></textarea>
-		
-		<input type="submit" value="글쓰기">
-		<input type="reset" value="다시쓰기" >	
-		<input type="button" value="취소" onclick="location.href='./B_listView.bo'">	
-	
-	
-	</form>
+		<input type="submit" value="포트폴리오 추가" onclick="location.href='p_insert.ad'">
 </body>
 </html>

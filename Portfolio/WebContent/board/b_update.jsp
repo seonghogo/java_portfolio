@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="com.board.db.BoardBean"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -12,7 +13,18 @@
 		BoardBean bb = (BoardBean)request.getAttribute("b_update");
 		int b_num = Integer.parseInt(request.getParameter("b_num"));
 	%>
-		
+			<%
+		String id = (String)session.getAttribute("admin");
+	
+			if(id == null){
+				PrintWriter ot = response.getWriter();
+				ot.println("<script>");
+				ot.println("alert('관리자만 작성가능')");
+				ot.println("history.back();");
+				ot.println("</script>");
+				ot.close();
+			}
+	%>
 		<form action="./B_updatePro.bo" method="post">
 		
 		<input type="text" value="<%=bb.getB_title()%>" name="title"><br>		

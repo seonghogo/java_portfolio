@@ -1,3 +1,5 @@
+<%@page import="com.portfolio.db.P_folioBean"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -10,16 +12,30 @@
 <body>
 	<%
 		String admin = (String)session.getAttribute("admin");
-	
-			if(admin == null){
-				PrintWriter ot = response.getWriter();
-				ot.println("<script>");
-				ot.println("alert('관리자만 작성가능')");
-				ot.println("history.back();");
-				ot.println("</script>");
-				ot.close();
-			}
+		ArrayList list = (ArrayList)request.getAttribute("plist");
+		P_folioBean pb = null;
+
 	%>
-		<input type="submit" value="포트폴리오 추가" onclick="location.href='p_insert.ad'">
+		<form action="./B_selectView.bo" method="post">
+		<%
+			for(int i=0; i<list.size(); i++){
+				pb = new P_folioBean();
+				pb = (P_folioBean)list.get(i);
+		%>
+			<%=pb.getP_num() %>
+			<a href="./P_selectView.ad?p_num=<%=pb.getP_num()%>"><%=pb.getP_title() %></a>
+			<%=pb.getP_contents() %>
+			<%=pb.getP_date() %>
+			<%=pb.getItem() %>
+			<br>
+		<%} %>				
+		
+		<%
+		if(admin != null){
+		%>
+		<input type="button" value="포트폴리오 추가" onclick="location.href='p_insert.ad'">
+		<%} %>		
+		<input type="button" value="메인" onclick="location.href='Main.me'">
+		</form>
 </body>
 </html>

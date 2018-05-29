@@ -8,7 +8,7 @@ public class P_folioBean {
 	private String item;
 	private String p_title;
 	private String p_contents;
-	private Timestamp b_date;
+	private Timestamp p_date;
 	private String img;
 	public int getP_num() {
 		return p_num;
@@ -34,11 +34,11 @@ public class P_folioBean {
 	public void setP_contents(String p_contents) {
 		this.p_contents = p_contents;
 	}
-	public Timestamp getB_date() {
-		return b_date;
+	public Timestamp getP_date() {
+		return p_date;
 	}
-	public void setB_date(Timestamp b_date) {
-		this.b_date = b_date;
+	public void setP_date(Timestamp p_date) {
+		this.p_date = p_date;
 	}
 	public String getImg() {
 		return img;

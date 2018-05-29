@@ -40,7 +40,15 @@
   	<url-pattern>*.ad</url-pattern>
   </servlet-mapping>
   
-  
+     <servlet>
+  	<servlet-name>UserFrontController</servlet-name>
+  	<servlet-class>com.user.action.UserFrontController</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+  	<servlet-name>UserFrontController</servlet-name>
+  	<url-pattern>*.us</url-pattern>
+  </servlet-mapping>
   
   <resource-ref>
     <description>db</description>

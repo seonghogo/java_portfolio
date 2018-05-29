@@ -1,4 +1,4 @@
-package com.board.action;
+package com.portfolio.action;
 
 import java.io.PrintWriter;
 import java.security.MessageDigest;
@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.board.db.BoardDAO;
+import com.portfolio.db.P_folioDAO;
 
-public class B_deletePro implements Action{
+public class P_deletePro implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -21,7 +22,10 @@ public class B_deletePro implements Action{
 		String id = (String)session.getAttribute("admin");
 		String pass = request.getParameter("pass");
 		System.out.println(pass+"pass");
-		int num = Integer.parseInt(request.getParameter("b_num"));
+		int num = Integer.parseInt(request.getParameter("p_num"));
+		
+		P_folioDAO pdao = new P_folioDAO();
+		
 		BoardDAO bdao = new BoardDAO();
 		response.setContentType("text/html; charset=UTF-8");
 				ArrayList<String[]> result = new ArrayList();
@@ -53,10 +57,10 @@ public class B_deletePro implements Action{
 				}
 		
 				int check = 0;
-				check = bdao.b_del(SHA,num,id);
+				check = pdao.p_del(SHA,num,id);
 				
 				if(check == 1) {
-					forward.setPath("./B_listView.bo");
+					forward.setPath("./P_listView.ad");
 				}else if(check == 2) {
 					PrintWriter out = response.getWriter();
 					out.println("<script>");

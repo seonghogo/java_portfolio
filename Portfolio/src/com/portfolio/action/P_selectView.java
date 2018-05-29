@@ -1,14 +1,12 @@
 package com.portfolio.action;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.portfolio.db.P_folioBean;
 import com.portfolio.db.P_folioDAO;
 
-public class P_listView implements Action{
+public class P_selectView implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -16,17 +14,14 @@ public class P_listView implements Action{
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		
-		
-		
-		ArrayList<P_folioBean> list = new ArrayList<>();
+		int num = Integer.parseInt(request.getParameter("p_num"));
+		P_folioBean pb = new P_folioBean();
 		P_folioDAO pdao = new P_folioDAO();
 		
-		list = pdao.list();
+		pb = pdao.select(num);
 		
-		request.setAttribute("plist", list);
-		forward.setPath("./P_listAction.ad");
-		
-		
+		request.setAttribute("p_sel", pb);
+		forward.setPath("./P_selectAction.ad");
 		
 		return forward;
 	}

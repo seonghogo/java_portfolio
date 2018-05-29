@@ -75,6 +75,36 @@ public class PortfolioFrontController extends HttpServlet{
 				forward.setPath("./p_folio/p_insert.jsp");
 				break;
 				
+			case "P_insertPro.ad":
+				forward = mappingURI(new P_insertPro(), request, response);
+				break;
+				
+			case "P_selectView.ad":
+				forward = mappingURI(new P_selectView(), request, response);
+				break;
+				
+			case "P_selectAction.ad":
+				forward.setRedirect(false);
+				forward.setPath("./p_folio/p_select.jsp");
+				break;
+				
+			case "P_updateView.ad":
+				forward = mappingURI(new P_updateView(), request, response);
+				break;
+			
+			case "P_updateAction.ad":
+				forward.setRedirect(false);
+				forward.setPath("./p_folio/p_update.jsp");
+				break;
+			
+			case "P_updatePro.ad":
+				forward = mappingURI(new P_updatePro(), request, response);
+				break;
+				
+			case "P_deletePro.ad":
+				forward = mappingURI(new P_deletePro(), request, response);
+				break;
+			
 			}
 			
 				

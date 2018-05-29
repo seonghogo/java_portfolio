@@ -109,9 +109,10 @@ public class UserDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				if(rs.getInt("a_num") == 0) {
+				System.out.println(rs.getInt("a_num")+"11");
+				if(rs.getInt("a_num")>0) {
 					check = 1;
-				}else {
+				}else if(rs.getInt("a_num")==0){
 					check = 2;
 				}
 			}
@@ -127,9 +128,10 @@ public class UserDAO {
 	}
 	public AboutBean aboutsel() {
 		AboutBean ab=null;
+		System.out.println("aboutsel");
 		try {
 			con = getConnection();
-			sql = "select * from about order by num desc limit 1";
+			sql = "select * from about order by a_num desc limit 1";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -138,6 +140,7 @@ public class UserDAO {
 				ab.setA_contents(rs.getString("a_contents"));
 				ab.setDate(rs.getTimestamp("date"));
 				ab.setImg(rs.getString("img"));
+				System.out.println(ab.getA_contents());
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

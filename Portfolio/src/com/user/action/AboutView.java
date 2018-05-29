@@ -19,11 +19,12 @@ public class AboutView implements Action{
 		UserDAO dao = new UserDAO();
 		int check =0;
 		check = dao.about();
-		
+		System.out.println(check+"aboutview");
 		if(check == 1) {
 			ab = dao.aboutsel();
 			request.setAttribute("about", ab);
-		}else{
+		}else if(check == 2){
+			
 		}
 		forward.setPath("./About.us");
 		return forward;

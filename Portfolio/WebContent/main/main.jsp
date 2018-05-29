@@ -32,6 +32,8 @@
 
 			}else if(id == null && admin != null){
 			 %>
+			 
+				<input type="button" value="자기소개 등록 및 수정" onclick="location.href='./AboutView.us'">
 				<input type="button" value="회원관리" onclick="location.href='./UserList.us'">
 				<input type="button" value="포트폴리오관리" onclick="location.href='./P_listView.ad'">
 				<input type="button" value="코드 관리" onclick="location.href='./B_listView.bo'">

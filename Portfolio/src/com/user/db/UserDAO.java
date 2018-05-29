@@ -9,6 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import com.about.db.AboutBean;
 import com.board.db.BoardBean;
 import com.member.db.MemberBean;
 
@@ -95,6 +96,86 @@ public class UserDAO {
 			if(con!=null)try{con.close();}catch(SQLException se){}
 		}
 		
+		return check;
+		
+	}
+	public int about() {
+		System.out.println("about");
+		int check = 0;
+		
+		try {
+			con = getConnection();
+			sql = "select * from about order by a_num desc limit 1";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getInt("a_num") == 0) {
+					check = 1;
+				}else {
+					check = 2;
+				}
+			}
+			System.out.println(check+"!!!::;check");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			if(rs!=null)try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null)try{pstmt.close();}catch(SQLException se){}
+			if(con!=null)try{con.close();}catch(SQLException se){}
+		}
+		return check;
+	}
+	public AboutBean aboutsel() {
+		AboutBean ab=null;
+		try {
+			con = getConnection();
+			sql = "select * from about order by num desc limit 1";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				ab = new AboutBean();
+				ab.setA_num(rs.getInt("a_num"));
+				ab.setA_contents(rs.getString("a_contents"));
+				ab.setDate(rs.getTimestamp("date"));
+				ab.setImg(rs.getString("img"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			if(rs!=null)try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null)try{pstmt.close();}catch(SQLException se){}
+			if(con!=null)try{con.close();}catch(SQLException se){}
+		}
+		
+		return ab;
+	}
+	public int aboutin(AboutBean ab) {
+		int check = 0;
+		int num = 0;
+		try {
+			System.out.println("aboutin");
+			con = getConnection();
+			sql = "select count(a_num) as num from about";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				num = rs.getInt("num");
+				num = num+1;
+			}
+			sql = "insert into about(a_num,a_contents,date,img) values(?,?,now(),?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, ab.getA_contents());
+			pstmt.setString(3, ab.getImg());
+			pstmt.executeUpdate();
+			check = 1;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			if(rs!=null)try{rs.close();}catch(SQLException se){}
+			if(pstmt!=null)try{pstmt.close();}catch(SQLException se){}
+			if(con!=null)try{con.close();}catch(SQLException se){}
+		}
 		return check;
 		
 	}

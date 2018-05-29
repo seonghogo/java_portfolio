@@ -73,8 +73,19 @@ public class UserFrontController extends HttpServlet{
 				System.out.println("추방");
 				forward = mappingURI(new UserDelPro(),request, response);
 				break;
-
-
+			
+			case "AboutView.us":
+				forward = mappingURI(new AboutView(),request, response);
+				break;
+				
+			case "About.us":
+				forward.setRedirect(false);
+				forward.setPath("./user/about.jsp");
+				break;
+				
+			case "Aboutin.us":
+				forward = mappingURI(new Aboutin(),request, response);
+				break;
 			}
 		}
 		if(forward != null){

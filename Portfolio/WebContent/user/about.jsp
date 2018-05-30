@@ -32,6 +32,7 @@
 				<textarea name="contents2" cols="50" rows="13"><%=ab.getA_contents() %></textarea><br>
 				<img src="./fileupload/<%=ab.getImg()%>" />
 		<input type="file" name="file2"><br>
+		<input type="hidden" value="<%=ab.getImg() %>" name="file2">
 		<input type="hidden" value="<%=ck %>" name="check">
 		<input type="button" value="메인" onclick="location.href='./Main.me'">
 		<input type="submit" value="수정 및 등록">

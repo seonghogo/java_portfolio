@@ -24,17 +24,24 @@ public class Aboutin implements Action{
 		MultipartRequest multi = new MultipartRequest(request, path,filesize,"UTF-8",new DefaultFileRenamePolicy());
 //		int check = Integer.parseInt(request.getParameter("check"));
 		int check = Integer.parseInt(multi.getParameter("check"));
-		System.out.println(check+":::check");
+		String fi = multi.getParameter("file2");
 		if(check == 1) {
 			ab = new AboutBean();
-			ab.setA_contents(multi.getParameter("contents1"));
 			ab.setImg(multi.getFilesystemName((String)multi.getFileNames().nextElement()));
 			
 		}else if(check == 2) {
 			ab = new AboutBean();
 			ab.setA_contents(multi.getParameter("contents2"));
 			ab.setImg(multi.getFilesystemName((String)multi.getFileNames().nextElement()));
+		}else if(check == 3) {
+			ab = new AboutBean();
+			ab.setA_contents(multi.getParameter("contents2"));
+			ab.setImg(fi);
 		}
+		
+		
+		
+		
 		System.out.println(ab.getA_contents()+"1111");
 		int ck = 0;
 		

@@ -151,7 +151,7 @@ public class P_folioDAO {
 		return pb;
 	}
 	
-	public void p_update(String title , String contents,int num) {
+	public void p_update(String title , String contents,int num,String file) {
 		System.out.println("!!!!!!!!!!!");
 		System.out.println(title+""+contents+""+num);
 		try {
@@ -163,11 +163,12 @@ public class P_folioDAO {
 
 			if(rs.next()) {
 				System.out.println("111");
-				sql = "update p_folio set p_title=? , p_contents=? where p_num=?";
+				sql = "update p_folio set p_title=? , p_contents=? , img=? where p_num=?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, title);
 				pstmt.setString(2, contents);
-				pstmt.setInt(3, num);
+				pstmt.setString(3, file);
+				pstmt.setInt(4, num);
 				pstmt.executeUpdate();
 			}
 

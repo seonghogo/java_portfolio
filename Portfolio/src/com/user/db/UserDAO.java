@@ -112,6 +112,12 @@ public class UserDAO {
 				System.out.println(rs.getInt("a_num")+"11");
 				if(rs.getInt("a_num")>0) {
 					check = 1;
+					sql = "select * from about order by a_contents desc limit 1";
+					pstmt = con.prepareStatement(sql);
+					rs = pstmt.executeQuery();
+					if(rs.next()) {
+						check = 2;
+					}
 				}else if(rs.getInt("a_num")==0){
 					check = 2;
 				}

@@ -17,34 +17,27 @@ public class B_listView implements Action{
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		
-//		int pageSize = 10;
-//		String pageNum = request.getParameter("pageNum");
-//		String col = request.getParameter("col");
-//		
-//		
-//		
-//		
-//		if (pageNum == null) {
-//			pageNum = "1";
-//		}
-//
-//		// 가져올 페이지의 시작행 구하기 1페이지 1행 2페이지 11행 3페이지 21행
-//		int currentPage = Integer.parseInt(pageNum);
-//		int startRow = (currentPage - 1) * pageSize + 1;
-//		// 게시판 디비에서 글가져오기 시작행 ,한페이지 가져올 글 개수
-//		
-//		int count = 0;
-//		
-//		int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
-//
-//		int pageBlock = 10;
-//
-//		int startPage = ((currentPage - 1) / pageBlock) * pageBlock + 1;
-//		int endPage = startPage + pageBlock - 1;
-//		if (endPage > pageCount) {
-//			endPage = pageCount;
-//		}		
-
+		int ck = Integer.parseInt(request.getParameter("num"));
+		System.out.println(ck);
+		System.out.println("전체회원");
+		int pageSize = 8;
+		int pageBlock = 3;
+		String pageNum = request.getParameter("pageNum");
+		if(pageNum == null){
+			pageNum = "1";
+		}
+		int currentpage = Integer.parseInt(pageNum);
+		int startRow=(currentpage-1)*pageSize+1;
+		int endRow=currentpage*pageSize;
+		int count=ado.getBoardCount();
+		
+		int pageCount = count/pageSize + (count%pageSize == 0?0:1);
+		int startPage=((currentpage-1)/pageBlock)*pageBlock+1;
+		int endPage = startPage+pageBlock-1;
+	       if(endPage > pageCount){
+	        	endPage=pageCount;
+	        
+	        }
 		
 		
 		BoardDAO bdao = new BoardDAO();

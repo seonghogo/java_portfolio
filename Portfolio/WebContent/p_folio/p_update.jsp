@@ -27,10 +27,11 @@
 				ot.close();
 			}
 	%>
-		<form action="./P_updatePro.ad" method="post">
+		<form action="./P_updatePro.ad" method="post" enctype="multipart/form-data">
 		
 		<input type="text" value="<%=pb.getP_title()%>" name="title"><br>		
 		<textarea name="contents" cols="50" rows="13"><%=pb.getP_contents() %></textarea>
+		<input type="file" name="file2"><br>
 		<input type="submit" value="수정" >
 <!-- 		<input type="button" value="삭제"> -->
 	<input type="button" value="목록" onclick="location.href='./P_listView.ad'">

@@ -4,43 +4,72 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
+
+	  <!-- header -->
+      	 <jsp:include page="../INC/top.jsp"></jsp:include> 
+      <!-- header -->
 	<%
 		String id = (String)session.getAttribute("user");
 		String admin = (String)session.getAttribute("admin");
 	%>
 		<form>
-			<%
+			
+			<div id="theme-carousel" class="carousel slide" data-ride="carousel">
+	
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<img src="images/carousel1.jpg" alt="carousel1" style="width:100%; height:757px"/>
+			
+			<div class="carousel-caption">
+	<%
 			if(id==null && admin == null){
 			%>
-				<input type="button" value="로그인" onclick="location.href='./LoginAction.me'" >	
-			<input type="button" value="회원가입" onclick="location.href='./JoinAction.me'">	
-			<%
+				<button class="button-more-white btn-lg" type="button" onclick="location.href='./LoginAction.me'"><i class="fa fa-info" aria-hidden="true"></i>&nbsp; 로그인</button>
+				<button class="button-more-white btn-lg" type="button" onclick="location.href='./JoinAction.me'"><i class="fa fa-info" aria-hidden="true"></i>&nbsp; 회원가입</button>
+					<%
 
-			}else if(id != null && admin == null){
-
-
-			%>
-				<input type="button" value="포트폴리오" onclick="location.href='./P_listView.ad'">
-				<input type="button" value="코드 게시판" onclick="location.href='./B_listView.bo'">
-				<input type="button" value="수정" onclick="location.href='./M_updateView.me'">
-				<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
-				<input type="button" value="탈퇴" onclick="location.href='./M_deleteAction.me'">
-				
-			<%	
-
-			}else if(id == null && admin != null){
-			 %>
-				<input type="button" value="자기소개 수정 및 등록" onclick="location.href='./AboutView.us'">
-				<input type="button" value="회원관리" onclick="location.href='./UserList.us'">
-				<input type="button" value="포트폴리오 관리" onclick="location.href='./P_listView.ad'">
-				<input type="button" value="코드 게시판 관리" onclick="location.href='./B_listView.bo'">
-			 	<input type="button" value="로그아웃" onclick="location.href='./logout.me'">
-			<%
 			}
-			%>				
+			%>
+			</div>
+		</div>
+<!-- 		<div class="item"> -->
+<!-- 			<img src="images/carousel3.jpg" alt="carousel3" style="width:100%"> -->
+<!-- 			<div class="carousel-caption"> -->
+<!-- 				<span class="hidden-xs" style="font-size:80px;"><br />Artisrtic<br /></span> -->
+<!--                 <span class="visible-xs" style="font-size:40px;">Artisrtic</span> -->
+<!-- 				<button class="button-more-white btn-lg" type="button"><i class="fa fa-info" aria-hidden="true"></i>&nbsp; MORE INFO</button> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="item"> -->
+<!-- 			<img src="images/carousel3.jpg" alt="carousel3" style="width:100%"> -->
+<!-- 			<div class="carousel-caption"> -->
+<!-- 				<span class="hidden-xs" style="font-size:80px;"><br />Imagination<br /></span> -->
+<!--                 <span class="visible-xs" style="font-size:40px;">Imagination</span> -->
+<!-- 				<button class="button-more-white btn-lg" type="button"><i class="fa fa-info" aria-hidden="true"></i>&nbsp; MORE INFO</button> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+	</div>
+	<!-- Controls -->
+	<a class="left carousel-control" href="#theme-carousel" role="button" data-slide="prev">
+        <div class="carousel-control-arrow">&#8249;</div>
+	</a>
+	<a class="right carousel-control" href="#theme-carousel" role="button" data-slide="next">
+        <div class="carousel-control-arrow">&#8250;</div>
+	</a>
+</div>
+					
 		</form>
+		
+	  <!-- footer -->
+     	 <jsp:include page="../INC/bottom.jsp"></jsp:include>
+      <!-- footer -->
 </body>
 </html>

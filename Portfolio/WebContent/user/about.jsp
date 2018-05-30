@@ -20,7 +20,6 @@
 		if(ab == null){
 			ck = 1;
 	%>
-	<%=ck %>
 		<textarea name="contents1" cols="50" rows="13">내용이 없습니다 입력해주세요</textarea><br>
 		<input type="file" name="file1"><br>
 		<input type="button" value="메인"onclick="location.href='./Main.me'">
@@ -30,9 +29,14 @@
 			ck = 2;	
 		%>
 				<textarea name="contents2" cols="50" rows="13"><%=ab.getA_contents() %></textarea><br>
+				<%if(ab.getImg()!=null){// 이미지가 있을때
+					%>
 				<img src="./fileupload/<%=ab.getImg()%>" />
+				<%}else{ ck = 3;//이미지가 없을때%>  
+				<input type="hidden" value="<%=ab.getImg() %>" name="file2">
+				등록된 이미지가 없습니다.
+				<%} %>
 		<input type="file" name="file2"><br>
-		<input type="hidden" value="<%=ab.getImg() %>" name="file2">
 		<input type="hidden" value="<%=ck %>" name="check">
 		<input type="button" value="메인" onclick="location.href='./Main.me'">
 		<input type="submit" value="수정 및 등록">

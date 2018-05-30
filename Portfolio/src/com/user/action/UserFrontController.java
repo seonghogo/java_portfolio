@@ -86,6 +86,15 @@ public class UserFrontController extends HttpServlet{
 			case "Aboutin.us":
 				forward = mappingURI(new Aboutin(),request, response);
 				break;
+				
+			case "AboutUserView.us":
+				forward = mappingURI(new AboutUserView(),request, response);
+				break;
+			
+			case "AboutUser.us":	
+				forward.setRedirect(false);
+				forward.setPath("./user/aboutuser.jsp");
+				break;
 			}
 		}
 		if(forward != null){
